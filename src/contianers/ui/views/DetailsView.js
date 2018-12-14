@@ -1,45 +1,44 @@
 import React, {Component} from 'react';
 import axios from "../../DAL/database";
-import Article from '../../partials/Article';
+import Article from "../../partials/Article";
 
-class Content extends Component {
+class DetailsView extends Component {
 
-    state = {articles: []};
+    state = {
+        articleId :this.props.match.params.id,
+        articleDetails : []
+    };
 
     componentDidMount() {
-        axios.get("articles").then(response => {
+        axios.get("article/"+this.props.match.params.id).then(response => {
             const articles = response.data;
             const updatedArticles = articles.map(article => {
                 return {
                     ...article
                 }
             });
-            this.setState({articles: updatedArticles});
+            console.log(updatedArticles);
+            this.setState({articleDetails: updatedArticles});
         }).catch(err => {
-            //console.log(err);
+            console.log(err);
             this.setState({error: true});
+
         });
 
-        console.log(this.state)
     }
 
     render() {
-
-        let articles = this.state.articles.map(article => {
+        let singleArticle = this.state.articleDetails.map(article => {
             return <Article key={article._id} id={article._id} title={article.title} body={article.body} author={article.author} date={article.date}/>;
         });
-
         return (
             <div>
-                <h1 className="text-center title">List of Articles</h1>
-                <hr/>
-                <div className="container">
-                    {articles}
-                </div>
+                {singleArticle}
             </div>
         );
     }
-
 }
 
-export default Content;
+
+
+export default DetailsView;

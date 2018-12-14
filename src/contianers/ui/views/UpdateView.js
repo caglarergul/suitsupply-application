@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import axios from "../../DAL/database";
-import SmallPerson from "../../partials/SmallPerson";
+import SmallPerson from "../../partials/SingleArticle";
 import moment from "moment";
 import MaterialIcon from 'material-icons-react';
 

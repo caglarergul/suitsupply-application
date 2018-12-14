@@ -1,54 +1,34 @@
 import React, {Component} from 'react';
 import logo from "../../logo.png";
-import MaterialIcon from 'material-icons-react';
 
 class Header extends Component {
     render() {
         return (
 
-
-            
-            <nav className="navbar navbar-expand-lg navbar-dark black">
-            
-                <div className="container">
-                <a className="navbar-brand" href="/"><img src={logo} alt="logo" width="75px" /></a>
-            
-               
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-            
-                
-                <div className="collapse navbar-collapse" id="basicExampleNav">
-            
-                   
-                    <ul className="navbar-nav mr-auto">
-                        <li className="nav-item">
-                            <a className="nav-link" href="/">
-                            <MaterialIcon icon="home" color="#ffffff" />
-                            Home</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href={"/Create"}><MaterialIcon icon="add_to_photos" color="#ffffff" size="small" />Create</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href={"/Update"}><MaterialIcon icon="edit" color="#ffffff" size="small"/>Update</a>
-                        </li>
-            
-                        <li className="nav-item">
-                            <a className="nav-link" href={"/Delete"}><MaterialIcon icon="delete_sweep" color="#ffffff" size="small" />Delete</a>
-                        </li>
-            
-                    </ul>
-                    
-            
-                  
-                </div>
-               </div>
-            
+            <nav className="sidebar-navigation">
+                <ul>
+                    <li className="active">
+                        <a href={'/'}> <i className="fa fa-home"></i>
+                        <span className="tooltip">Home</span></a>
+                    </li>
+                    <li>
+                        <a href={'/Create'}><i className="fa fa-edit"></i>
+                        <span className="tooltip">Create Article</span></a>
+                    </li>
+                    <li>
+                        <a href={'/Update'}><i className="fa fa-refresh"></i>
+                        <span className="tooltip">Update an Article</span></a>
+                    </li>
+                    <li>
+                        <a href={'/Delete'}><i className="fa fa-trash"></i>
+                        <span className="tooltip">Delete Article</span></a>
+                    </li>
+                    <li>
+                        <a href={'/Login'}><i className="fa fa-user"></i>
+                        <span className="tooltip">Login</span></a>
+                    </li>
+                </ul>
             </nav>
-          
 
 
 
