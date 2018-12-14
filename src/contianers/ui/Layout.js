@@ -3,7 +3,7 @@ import Header from './Header';
 
 const layout = (props) => {
     return (
-        <div className="container-fluid no-padding">
+        <div className="container-fluid">
             <Header/>
             <div className="container menu-top"> {props.children}</div>
         </div>
