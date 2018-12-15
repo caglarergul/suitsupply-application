@@ -1,4 +1,5 @@
-# suitsupply-application
+# suitsupply-application [![Build Status](https://travis-ci.com/caglarergul/suitsupply-application.svg?branch=master)](https://travis-ci.com/caglarergul/suitsupply-application)
+
 
 Please install all the dependancies first.
 <pre>
