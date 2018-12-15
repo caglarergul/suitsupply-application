@@ -32,7 +32,7 @@ script:
 deploy:
   provider: pages
   skip_cleanup: true
-  github_token: $github_token
+  github_token: tnKwCLNMl-aC2IXg0lY08w
   local_dir: build
   on:
     branch: master
