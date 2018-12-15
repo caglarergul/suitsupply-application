@@ -7,9 +7,9 @@ import registerServiceWorker from './registerServiceWorker';
 
 const app = (
     // Handle BrowserRouter from App.js
-    <BrowserRouter>
+
         <App/>
-    </BrowserRouter>
+
 );
 ReactDOM.render(
     app,
