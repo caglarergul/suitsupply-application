@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import axios from "../../DAL/database";
-import Article from "../../partials/Article";
+import SingleArticle from "../../partials/SingleArticle";
 
 class DetailsView extends Component {
 
@@ -10,30 +10,24 @@ class DetailsView extends Component {
     };
 
     componentDidMount() {
+
         axios.get("article/"+this.props.match.params.id).then(response => {
-            const articles = response.data;
-            const updatedArticles = articles.map(article => {
-                return {
-                    ...article
-                }
-            });
-            console.log(updatedArticles);
-            this.setState({articleDetails: updatedArticles});
+            this.setState({articleDetails: response.data});
         }).catch(err => {
             console.log(err);
             this.setState({error: true});
 
         });
-
     }
 
     render() {
-        let singleArticle = this.state.articleDetails.map(article => {
-            return <Article key={article._id} id={article._id} title={article.title} body={article.body} author={article.author} date={article.date}/>;
-        });
+
+
         return (
             <div>
-                {singleArticle}
+                <SingleArticle id={this.state.articleDetails._id} title={this.state.articleDetails.title}
+                               body={this.state.articleDetails.body} author={this.state.articleDetails.author}
+                               date={this.state.articleDetails.date}/>
             </div>
         );
     }

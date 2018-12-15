@@ -20,7 +20,7 @@ class App extends Component {
                     <Route path="/" exact component={List}/>
                     <Route path="/Details/:id" exact component={Details}/>
                     <Route path="/Create" exact component={Create}/>
-                    <Route path="/Update" exact component={Update}/>
+                    <Route path="/Update/:id" exact component={Update}/>
                     <Route path="/Delete" exact component={Delete}/>
                 </Layout>
             </Aux>

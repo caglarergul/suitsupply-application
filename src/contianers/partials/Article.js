@@ -10,7 +10,7 @@ const article = (props) => (
         <div className="description">
             <h1>{props.title}</h1>
             <h2>{props.author} - {props.date}</h2>
-            <p> <Truncate lines={2} ellipsis={<p className="read-more"><a href={"/Details/"+props.id}>Read More</a></p>}>{props.body}</Truncate></p>
+            <p> <Truncate lines={2} ellipsis={<span className="read-more"><a href={"/Details/"+props.id}>Read More</a></span>}>{props.body}</Truncate></p>
 
         </div>
     </div>
