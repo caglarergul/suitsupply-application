@@ -66,9 +66,6 @@ class UpdateView extends Component {
                     Update Article
                 </h1>
                 <br/>
-
-
-
                         <div className="form">
                             <label className="inputEmail">ID</label>
                             <input type="text" className="form-control input-lg"
@@ -87,10 +84,6 @@ class UpdateView extends Component {
                                    value={this.state.article.body}
                                    onChange={this.changeBody.bind(this)}>&nbsp;</textarea>
                         </div>
-
-
-
-                        
                         <button className="btn default-button pull-right" onClick={this.putDataHandler}>Update
                         </button>
 

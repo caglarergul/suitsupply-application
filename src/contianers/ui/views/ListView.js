@@ -7,6 +7,8 @@ class Content extends Component {
     state = {articles: []};
 
     componentDidMount() {
+
+        // Getting all articles from the API and store them into state.
         axios.get("articles").then(response => {
             const articles = response.data;
             const updatedArticles = articles.map(article => {
@@ -16,7 +18,7 @@ class Content extends Component {
             });
             this.setState({articles: updatedArticles});
         }).catch(err => {
-            //console.log(err);
+            console.log(err);
             this.setState({error: true});
         });
 
@@ -24,8 +26,11 @@ class Content extends Component {
 
     render() {
 
+        // Mapping articles array for showing partial component into Div.
         let articles = this.state.articles.map(article => {
-            return <Article key={article._id} id={article._id} title={article.title} body={article.body} author={article.author} date={article.date}/>;
+            // Sending props to partial
+            return <Article key={article._id} id={article._id} title={article.title} body={article.body}
+                            author={article.author} date={article.date}/>;
         });
 
         return (
