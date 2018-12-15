@@ -29,10 +29,3 @@ script:
   - npm run build #Creats a production build
 
 
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: tnKwCLNMl-aC2IXg0lY08w
-  local_dir: build
-  on:
-    branch: master
