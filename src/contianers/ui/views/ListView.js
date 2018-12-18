@@ -17,8 +17,6 @@ class Content extends Component {
         } else {
             this.getAllArticles();
         }
-
-
     };
 
     getAllArticles = () => {
@@ -39,10 +37,7 @@ class Content extends Component {
     };
 
     componentDidMount() {
-
         this.getAllArticles();
-
-
     }
 
 
@@ -52,7 +47,6 @@ class Content extends Component {
         return (
             <div>
                 <h1 className="text-center title">List of Articles</h1>
-
                 <div className="container">
                     <hr/>
                     <input type="text" onChange={(event) => this.searchHandler(event)} placeholder="Search an article"/>
