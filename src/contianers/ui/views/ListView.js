@@ -6,30 +6,19 @@ class Content extends Component {
 
     state = {articles: [], searchResult: [], foundedArticles: []};
     searchHandler = (e) => {
-        if (e.target.value.length!==0) {
+        if (e.target.value.length !== 0) {
             const updatedArray = [];
-            for (let i=0; i<this.state.articles.length;i++) {
-
-                // console.log(this.state.searchResult[i].title)
-                if(this.state.articles[i].title.toLowerCase().indexOf(e.target.value.toLowerCase())>=0) {
-                    console.log("found!");
-
+            for (let i = 0; i < this.state.articles.length; i++) {
+                if (this.state.articles[i].title.toLowerCase().indexOf(e.target.value.toLowerCase()) >= 0) {
                     updatedArray.push(this.state.articles[i]);
-                }else {
-
-
                 }
             }
             this.setState({searchResult: updatedArray})
-        }else {
-           this.getAllArticles();
-           // this.setState({searchResult: this.state.articles})
-
+        } else {
+            this.getAllArticles();
         }
 
 
-        console.log("Search Result after the search process:")
-        console.log(this.state.searchResult)
     };
 
     getAllArticles = () => {
@@ -51,8 +40,7 @@ class Content extends Component {
 
     componentDidMount() {
 
-       this.getAllArticles();
-
+        this.getAllArticles();
 
 
     }
@@ -61,16 +49,15 @@ class Content extends Component {
     render() {
 
 
-
         return (
             <div>
                 <h1 className="text-center title">List of Articles</h1>
 
                 <div className="container">
-<hr/>
+                    <hr/>
                     <input type="text" onChange={(event) => this.searchHandler(event)} placeholder="Search an article"/>
 
-                    <Article  results={this.state.searchResult} />
+                    <Article results={this.state.searchResult}/>
                 </div>
             </div>
         );

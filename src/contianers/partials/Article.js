@@ -1,5 +1,6 @@
 import React , {Component} from 'react';
 import Truncate from 'react-truncate';
+import {NavLink} from "react-router-dom";
 
 class article extends Component {
 // This is the basic partial to show article blog card. Additionally I used Truncate lib to show read more text and show short intro text for the blog card.
@@ -12,7 +13,7 @@ class article extends Component {
                     <h2>{r.author} - {r.date}</h2>
 
                     <p><Truncate lines={2} >{r.body}</Truncate>
-                        <span className="read-more"><a href={"/Details/" + r._id}>Read More</a></span>
+                        <span className="read-more"><NavLink to={"/Details/" + r._id}>Read More</NavLink></span>
                     </p>
                 </div>
             </div>
