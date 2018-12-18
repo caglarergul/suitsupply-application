@@ -15,11 +15,17 @@ nav a {
 }
 
 .container {
-    width: 1144px;
+    width: 80%;
     display: block;
     margin: 0 auto;
 }
-
+@media (max-width: 1200px) {
+    .container {
+        width: 720px !important;
+        display: block;
+        margin: 0 auto;
+    }
+}
 .container-fluid {
     width: 100%;
     padding-left: 15px;
@@ -53,6 +59,7 @@ input[type="text"], textarea {
     border-radius: 4px;
     padding: 10px;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .pull-right {
@@ -137,6 +144,7 @@ input[type="text"], textarea {
     background-color: #313443;
     float: left;
     position: fixed;
+    z-index: 999;
 }
 
 .sidebar-navigation ul {
